@@ -64,262 +64,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-mysql的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/14/mysql%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2023-01-14T03:23:53.616Z" itemprop="datePublished">2023-01-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="mysql的使用"><a href="#mysql的使用" class="headerlink" title="mysql的使用"></a>mysql的使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>切换表单 use +表名</p>
-<p>查询当前数据库 select database();</p>
-<h2 id="1-DDL语句"><a href="#1-DDL语句" class="headerlink" title="1.DDL语句"></a>1.DDL语句</h2><h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><ul>
-<li>show databases;查询所有数据</li>
-<li>create database 数据库名；</li>
-<li>use 数据库名；切换数据库</li>
-<li>select database();定位当前数据库</li>
-<li>drop database 数据库名；删除数据库</li>
-</ul>
-<h3 id="1-查询"><a href="#1-查询" class="headerlink" title="1.查询"></a>1.查询</h3><ul>
-<li><p>show tables；查询当前数据库所有表；</p>
-</li>
-<li><p>详细查询每个表：</p>
-<p>desc 表名；</p>
-<p>show create table 表名 ；查询指定表的建表数据(即建表时加的注释)</p>
-</li>
-</ul>
-<h3 id="2-创建"><a href="#2-创建" class="headerlink" title="2.创建"></a>2.创建</h3><p>create table 表名（</p>
-<p>字段一 字段1类型[comment 字段一注释]，</p>
-<p>字段二 字段2类型[comment 字段二注释]，</p>
-<p>字段三 字段3类型[comment 字段三注释]，</p>
-<p>……….)[comment 表注释]；</p>
-<p>​    </p>
-<h3 id="3-修改"><a href="#3-修改" class="headerlink" title="3.修改"></a>3.修改</h3><h4 id="1-添加"><a href="#1-添加" class="headerlink" title="1.添加"></a>1.添加</h4><p>alter 表名 add 字段名  类型(长度) [commend 注释] [约束]；</p>
-<p>例：将sex数据加入到myfirst表中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table myfirst add sex varchar(3);</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-修改"><a href="#2-修改" class="headerlink" title="2.修改"></a>2.修改</h4><p><strong>表的修改</strong></p>
-<p>修改表名</p>
-<p>alter table 表名 rename to 新表名；</p>
-<p>例：将 表名 myfirst 改为 first;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table myfirst rename to first;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>数据的修改</strong></p>
-<p>修改数据类型</p>
-<p>alter table 表名modify 字段名 新数据类型(长度)；</p>
-<p>例：将date 数据类型改为varchar</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table myfirst modify date varchar(50);</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>修改字段名和字段类型</strong></p>
-<p>alter table 表名 change 旧字段名 新字段名 类型(长度)[commend注释] [约束];</p>
-<p>例：将’日期’改为日期(原来带引号)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table myfirst change ‘日期’  日期  varchar(50);</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-删除"><a href="#3-删除" class="headerlink" title="3.删除"></a>3.删除</h4><p>表的删除</p>
-<p>直接删除表</p>
-<p>drop table[if exit] 表名；</p>
-<p>加 if exit 意义 删除表的时候如果表不存在会报错，加上 if exit 即便不存在也不会报错；</p>
-<p>删除del 表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table del;</span><br></pre></td></tr></table></figure>
-
-<p>删除指定表，并重新创建表</p>
-<p>truncate table 表名；</p>
-<p>相当于删除表内容，留下表结构；</p>
-<p>表内容的删除</p>
-<p>删除字段</p>
-<p>alter table 表名 drop 字段名；</p>
-<p>例：将 data 删除</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table myfirst drop date;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-DML语句"><a href="#2-DML语句" class="headerlink" title="2.DML语句"></a>2.DML语句</h2><h3 id="1-添加数据"><a href="#1-添加数据" class="headerlink" title="1.添加数据"></a>1.添加数据</h3><ul>
-<li><p>给指定字段添加数据</p>
-<p>语法：insert into 表名(字段1，字段2…..)values(值1，值2值3…..)</p>
-<p>例：插入 一个编号为1，姓名为刘汉康的 数据插入到表中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into user(id, name) value (1,&quot;刘汉康&quot;);</span><br></pre></td></tr></table></figure></li>
-<li><p>给全部字段添加数据</p>
-<p>语法 : insert into 表名values(值1，值2….);</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into  user values(4,&quot;刘汉康&quot;);</span><br></pre></td></tr></table></figure></li>
-<li><p>批量添加数据</p>
-<p>语法：insert into 表名values(值1，值2…)(值1，值2)(…);</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into user values(7,&quot;小明&quot;),(8,&quot;白也&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>$\textcolor{red}{注意}$</p>
-</li>
-</ul>
-<p>​       $\textcolor{red}{1.插入数据时，指定的字段需要与值的顺序一致}$</p>
-<p>​       $\textcolor{red}{2.字符串和日期类型 数据应该包含在双引号中}$</p>
-<p>​       $\textcolor{red}{3.插入数据的大小，应该在字段的规定范围内}$</p>
-<h3 id="2-更新和删除"><a href="#2-更新和删除" class="headerlink" title="2.更新和删除"></a>2.更新和删除</h3><ul>
-<li><p>修改数据</p>
-<p>语法：update 表名 set 字段名1=值1 ，字段名2 =值2，….{where 条件};</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update user set name = &quot;赵无极&quot; where name = &quot;ddd&quot;;</span><br><span class="line">update user set name = &quot;陈平安&quot;,id=10 where id=10;</span><br></pre></td></tr></table></figure>
-
-<p>$\textcolor{red}{注意:修改条件可以有，也可以没有，如果没有条件，则会修改整张表的所有数据。}$</p>
-</li>
-<li><p>删除数据</p>
-<p>语法：delete from 表名 [where 条件]；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  ~~~</span><br><span class="line"></span><br><span class="line">  $\textcolor&#123;red&#125;&#123;注意:删除条件可以有，也可以没有，如果没有条件，则会删除整张表的所有数据。&#125;$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 3.DQL语句</span><br><span class="line"></span><br><span class="line">### 查询</span><br><span class="line"></span><br><span class="line">+ 基本查询</span><br><span class="line"></span><br><span class="line">  语法：select  字段1，字段2，字段3... from 表名；</span><br><span class="line"></span><br><span class="line">  ​            select * form  表名;//查询所有数据</span><br><span class="line"></span><br><span class="line">  ​            select 字段 as 加别名；</span><br><span class="line"></span><br><span class="line">  ​            select distinct 字段 表名；</span><br><span class="line"></span><br><span class="line">  ~~~mysql</span><br><span class="line">  select id,name,age from emp;//部分字段</span><br><span class="line">  select * from emp;//查询所有数据</span><br><span class="line">  select workaddress as 工作地点 from emp;</span><br><span class="line">  select distinct workaddress as 工作地点 from emp;//去除重复记录</span><br></pre></td></tr></table></figure></li>
-<li><p>条件查询</p>
-<p><img src="D:\CodeStudy\数据库\条件查询表.png"></p>
-<p>语法：select 字段列表 from 表名 where 条件列表；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from emp where id&lt;=10;</span><br><span class="line">select * from emp where age between 15 and 20;等价于select * from emp where age&gt;=15 &amp;&amp;age &lt;=20;</span><br><span class="line">select * from emp where  name like&quot;__&quot;;//查询名字为两个字符的</span><br><span class="line">select * from emp where idcard like &quot;%x&quot;;//结尾为x的数据</span><br></pre></td></tr></table></figure>
-
-<p>$\textcolor{red}{注：between 后跟范围较小值}$</p>
-</li>
-<li><p>分组查询</p>
-<p>语法：select 字段列表 from 表名 [where 条件] group by 分组字段名[having 分组后过滤条件]；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select gender,count(*) from emp group by gender;</span><br><span class="line">select gender,avg(age) from emp group by gender;</span><br><span class="line">select gender,count(*) from emp where age&lt;=45  group by workaddress;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>$\textcolor{red}{注：where和having区别}$</p>
-<p>$\textcolor{red}{执行时机不同：where是分组之前进行过滤，不满足where条件，不参与分组；而having是分组之后对结果过滤}$</p>
-<p>$\textcolor{red}{判断条件不同：where不能对聚合函数进行判断，而having可以}$</p>
-<p>$\textcolor{red}{注意}$</p>
-<p>$\textcolor{red}{执行顺序 where&gt;聚合函数&gt;having}$</p>
-<p>$\textcolor{red}{分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无任何意义}$</p>
-</li>
-</ul>
-<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><ol>
-<li><p>聚合函数将一列数作为一个整体，进行纵向计算</p>
-</li>
-<li><p>常见聚合函数</p>
-<p>count  统计数量</p>
-<p>max     最大值</p>
-<p>min      最小值</p>
-<p>avg       平均值</p>
-<p>sum      求和</p>
-</li>
-<li><p>使用语法</p>
-<p>select 聚合函数(字段列表) from 表名[亦可加约束条件]；</p>
-<p>$\textcolor{red}{注：null值不参与所有聚合函数运算}$</p>
-<p>使用例子</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select  count(*) from emp;</span><br><span class="line">select  avg(age) from emp;</span><br><span class="line">select max(age) from emp;</span><br><span class="line">select min(age) from emp;</span><br><span class="line">select avg(age) from emp where workaddress=&quot;西安&quot;;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/14/mysql%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="clcvdx9sw0000bgv5b9gwa28x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-typora的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/01/14/typora%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2023-01-14T03:23:37.888Z" itemprop="datePublished">2023-01-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="typora的使用"><a href="#typora的使用" class="headerlink" title="typora的使用"></a>typora的使用</h1><p>里面加代码一般不会被渲染出来</p>
-<p>(** 内容**)</p>
-<p><strong>加粗</strong></p>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><ol>
-<li>第一点</li>
-<li> 第二点</li>
-<li> 第三点</li>
-<li>第四点<ol>
-<li>（分节摁tab键）</li>
-</ol>
-</li>
-<li>不填内容摁回车跳转回上一节（或者按删除）</li>
-</ol>
-<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
-<li><p>无序列表（星号加空格）</p>
-</li>
-<li><p>你是</p>
-</li>
-<li><p>s</p>
-</li>
-<li></li>
-</ul>
-<h2 id="表格（快捷键crtl-T"><a href="#表格（快捷键crtl-T" class="headerlink" title="表格（快捷键crtl+T)"></a>表格（快捷键crtl+T)</h2><table>
-<thead>
-<tr>
-<th align="right"></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><ol>
-<li>行内公式（嵌入在文本中）</li>
-<li>行外公式（一般单独一行）</li>
-</ol>
-<h2 id="代码（反引号）"><a href="#代码（反引号）" class="headerlink" title="代码（反引号）"></a>代码（反引号）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h2><p>感叹号+中括号+括号（！<a href=""></a>）</p>
-<p>图片</p>
-<p><img src="C:\Users\刘汉康\Pictures\2021-08\IMG_20210805_190545.jpg"></p>
-<p><a target="_blank" rel="noopener" href="https://i1.hdslb.com/bfs/face/68a8fe81d9eaaa76dc2bca0a38f3de8a22d12ced.jpg@240w_240h_1c_1s.webp">链接地址</a></p>
-<p>（crtl+点击跳转）</p>
-<h2 id="分栏符"><a href="#分栏符" class="headerlink" title="分栏符"></a>分栏符</h2><p>(___三个杠)</p>
-<hr>
-<p>引用</p>
-<p>(&gt;号)</p>
-<blockquote>
-<p>文本引用</p>
-<p>参考文献</p>
-<ol>
-<li>第一</li>
-<li>第二</li>
-</ol>
-</blockquote>
-<hr>
-<h2 id="文件导出"><a href="#文件导出" class="headerlink" title="文件导出"></a>文件导出</h2><p>可以导出各种文件</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/14/typora%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="clcvdx9t00001bgv5fdqtdapd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-text" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/01/14/text/" class="article-date">
@@ -346,7 +90,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/14/text/" data-id="clcvdhp340000t0v51dy0ga1o" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/14/text/" data-id="clcvgdmtw00015gv57a9t50ya" class="article-share-link">Share</a>
       
       
     </footer>
@@ -384,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/14/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="clcvdhp3a0002t0v57zj8bm0s" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/14/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="clcvgdmty00025gv5fon7gj6k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -433,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/14/hello-world/" data-id="clcvdhp380001t0v53hnnelyd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/01/14/hello-world/" data-id="clcvgdmto00005gv57x1w0h5p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -472,14 +216,6 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2023/01/14/mysql%E7%9A%84%E4%BD%BF%E7%94%A8/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/14/typora%E7%9A%84%E4%BD%BF%E7%94%A8/">(no title)</a>
-          </li>
         
           <li>
             <a href="/2023/01/14/text/">text</a>
