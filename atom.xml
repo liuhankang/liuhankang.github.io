@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-14T04:37:59.118Z</updated>
+  <updated>2023-01-15T03:21:58.453Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2023/01/15/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://example.com/2023/01/15/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <published>2023-01-15T02:53:06.986Z</published>
+    <updated>2023-01-15T03:21:58.453Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title:java基本数据类型<br>time:2023:1:15:10</p><hr><h3 id="标识符与关键字"><a href="#标识符与关键字" class="headerlink" title="标识符与关键字"></a>标识符与关键字</h3><h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><ul><li>标识符由字母、下划线、美元符号和数字组成</li><li>标识符的第一个字符不能是数字字符</li><li>标识符不能是关键字</li><li>标识符不能是true、false、null（尽管这些都不是关键字）</li></ul><h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p>java共有50个关键字</p><blockquote><p>abstract assert boolean break byte case catch char class const continue default do double else enum extends final finally float for if goto implements import instanceof int interface long native new package private protected public return short static strictfp super switch synchronized this<br>throw throws transient try void volatile while</p></blockquote><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ol><li><p>逻辑类型</p><ul><li><p>常量：true,false</p></li><li><p>变量：使用关键字boolean来声明逻辑变量</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> male=<span class="literal">true</span>,on=<span class="literal">true</span>,off=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure></li></ul></li><li><p>整数类型</p><ol><li><p>int型</p><p>常量：123,6000(十进制)，077(八进制)，0x3ABC(十六进制)</p><p>变量：使用关键字int来声明int型变量</p><p>int类型数据占4字节，取值范围-2^31~2^31-1</p></li><li><p>byte型</p><p>变量使用byte关键字声明，例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span> x=-<span class="number">12</span>,y=<span class="number">36</span>;</span><br></pre></td></tr></table></figure><p>不存在byte常量，可以把一定范围内的整型转化为byte类型,例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x= -<span class="number">20</span>,y=<span class="number">30</span>;</span><br><span class="line">x=(<span class="type">byte</span>)x;</span><br><span class="line">y=(<span class="type">byte</span>)y;</span><br></pre></td></tr></table></figure><p>byte占1个字节，取值范围-2^7~2^7-1</p></li><li></li></ol></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title:java基本数据类型&lt;br&gt;time:2023:1:15:10&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;标识符与关键字&quot;&gt;&lt;a href=&quot;#标识符与关键字&quot; class=&quot;headerlink&quot; title=&quot;标识符与关键字&quot;&gt;&lt;/a&gt;标识符与关键字&lt;/h</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Mysql学习</title>
