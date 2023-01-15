@@ -1,3 +1,5 @@
+http://example.com/2023/01/15/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/
+http://example.com/2023/01/15/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/
 http://example.com/2023/01/15/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/
 http://example.com/2023/01/14/Mysql%E5%AD%A6%E4%B9%A0/
 http://example.com/2023/01/14/Markdown%E8%AF%AD%E6%B3%95/

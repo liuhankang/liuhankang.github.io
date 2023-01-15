@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-15T07:13:00.064Z</updated>
+  <updated>2023-01-15T09:27:32.535Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java基本数据的输入和输出</title>
+    <link href="http://example.com/2023/01/15/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/"/>
+    <id>http://example.com/2023/01/15/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/</id>
+    <published>2023-01-15T08:59:13.833Z</published>
+    <updated>2023-01-15T09:27:32.535Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h5><p>使用Scanner类创建一个对象，如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br></pre></td></tr></table></figure><p> 然后使用reader对象调用下列方法，读取用户在命令行输入的各种基本数据类型：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nextBoolean(),nextByte(),next <span class="title function_">Short</span><span class="params">()</span>,nextInt(),nextLong(),nextFloat(),nextDouble()</span><br></pre></td></tr></table></figure><h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p>println和print可输出串值、表达式的值。二者区别是前者输出数据换行，后者输出数据不换行。允许使用并置符合“+”将变量、表达式或常数值等一起输出。如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;年龄&quot;</span>+<span class="number">20</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;表达式值为：&quot;</span>+<span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>);</span><br></pre></td></tr></table></figure><p>另外增加了类似于C语言的printf函数</p><p>格式：System.out.printf(“格式控制部分”,表达式一,表达式二,…,表达式n);</p><table><thead><tr><th align="center">控制符号</th><th align="center">效果</th></tr></thead><tbody><tr><td align="center">%d</td><td align="center">输出int类型数据</td></tr><tr><td align="center">%c</td><td align="center">输出char类型数据</td></tr><tr><td align="center">%f</td><td align="center">输出浮点型数据，小数部分保留6位</td></tr><tr><td align="center">%s</td><td align="center">输出字符串</td></tr><tr><td align="center">%md</td><td align="center">输出的int数据占m列、</td></tr><tr><td align="center">%m.nf</td><td align="center">输出的浮点型数据占m列，小数保留n位</td></tr></tbody></table><p>例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;%d,%3.4f&quot;</span>,<span class="number">200</span>,<span class="number">3.14159</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;输入&quot;&gt;&lt;a href=&quot;#输入&quot; class=&quot;headerlink&quot; title=&quot;输入&quot;&gt;&lt;/a&gt;输入&lt;/h5&gt;&lt;p&gt;使用Scanner类创建一个对象，如：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td </summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java基本数据类型转换</title>
+    <link href="http://example.com/2023/01/15/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://example.com/2023/01/15/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</id>
+    <published>2023-01-15T08:32:28.373Z</published>
+    <updated>2023-01-15T08:55:27.327Z</updated>
+    
+    <content type="html"><![CDATA[<p>当把一种基本数据类型的值赋给另一种变量时，就涉及到数据转换。</p><p>将这些类型按精读由低到高排列：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span> <span class="type">short</span> <span class="type">char</span> <span class="type">int</span> <span class="type">long</span> <span class="type">float</span> <span class="type">double</span></span><br></pre></td></tr></table></figure><h4 id="低级别转换为高级别"><a href="#低级别转换为高级别" class="headerlink" title="低级别转换为高级别"></a>低级别转换为高级别</h4><p>当把级别低的变量的值赋给级别高的变量时，系统会自动完成数据类型的转换，如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> x=<span class="number">100</span></span><br></pre></td></tr></table></figure><p>输出x的值将会是100.0</p><p>例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x=<span class="number">50</span>;</span><br><span class="line"><span class="type">float</span> y;</span><br><span class="line">y=x;</span><br></pre></td></tr></table></figure><p>输出y的值，结果将会是50.0</p><h4 id="高级别转化为低级别"><a href="#高级别转化为低级别" class="headerlink" title="高级别转化为低级别"></a>高级别转化为低级别</h4><p>当把高级别转换为低级别时，必须使用类型转换运算。</p><p>格式为：（类型名）要转换的值；</p><p>例如：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int x=(int)34.89;</span><br><span class="line">long y=(long)56.98F;</span><br><span class="line">int z=(int)1999L;</span><br></pre></td></tr></table></figure><p>输出x,y,z结果为：34，56,1999</p><hr><p>当把一个int类型数据赋值给byte、short、char类型变量时，不可能超出这些变量的取值范围否者必须进行类型转换。</p><p>如下所示：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">byte a=(byte)128;</span><br><span class="line">byte b=(byte)-129;</span><br></pre></td></tr></table></figure><p>a和b得到的值分别为128和127</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;当把一种基本数据类型的值赋给另一种变量时，就涉及到数据转换。&lt;/p&gt;
+&lt;p&gt;将这些类型按精读由低到高排列：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>java基本数据类型</title>
