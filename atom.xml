@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-15T12:20:02.950Z</updated>
+  <updated>2023-01-18T12:11:34.293Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2023/01/18/%E5%AD%90%E7%B1%BB%E4%B8%8E%E7%BB%A7%E6%89%BF/"/>
+    <id>http://example.com/2023/01/18/%E5%AD%90%E7%B1%BB%E4%B8%8E%E7%BB%A7%E6%89%BF/</id>
+    <published>2023-01-18T09:58:34.552Z</published>
+    <updated>2023-01-18T12:11:34.293Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="子类与继承"><a href="#子类与继承" class="headerlink" title="子类与继承"></a>子类与继承</h3><p>在类的声明中，通过使用关键字extends来定义一个类的关键字，格式如下：</p><p>class 子类名 extends 父类名{</p><p>}</p><h4 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h4><p>java中object类是所有类的祖先类，任何类都是Object类的子孙类。</p><p>每一个类（除了Object类）有且仅有一个父类，一个类可以有多个或零个子类。</p><p>如果一个类的声明中没有使用extends关键字，这个类被系统默认是object的子类，即类声明class A等价于class A extends Object</p><h4 id="子类的继承性"><a href="#子类的继承性" class="headerlink" title="子类的继承性"></a>子类的继承性</h4><p>子类和父类在同一个包，子类继承了父类中</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;子类与继承&quot;&gt;&lt;a href=&quot;#子类与继承&quot; class=&quot;headerlink&quot; title=&quot;子类与继承&quot;&gt;&lt;/a&gt;子类与继承&lt;/h3&gt;&lt;p&gt;在类的声明中，通过使用关键字extends来定义一个类的关键字，格式如下：&lt;/p&gt;
+&lt;p&gt;class 子类名 ext</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>郑嘉诚</title>
+    <link href="http://example.com/2023/01/18/%E9%83%91%E5%98%89%E8%AF%9A/"/>
+    <id>http://example.com/2023/01/18/%E9%83%91%E5%98%89%E8%AF%9A/</id>
+    <published>2023-01-18T01:52:50.000Z</published>
+    <updated>2023-01-18T01:53:38.665Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="郑嘉诚是大帅哥"><a href="#郑嘉诚是大帅哥" class="headerlink" title="郑嘉诚是大帅哥"></a>郑嘉诚是大帅哥</h3><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p><p>郑嘉诚是大帅哥</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;郑嘉诚是大帅哥&quot;&gt;&lt;a href=&quot;#郑嘉诚是大帅哥&quot; class=&quot;headerlink&quot; title=&quot;郑嘉诚是大帅哥&quot;&gt;&lt;/a&gt;郑嘉诚是大帅哥&lt;/h3&gt;&lt;p&gt;郑嘉诚是大帅哥&lt;/p&gt;
+&lt;p&gt;郑嘉诚是大帅哥&lt;/p&gt;
+&lt;p&gt;郑嘉诚是大帅哥&lt;/p&gt;
+&lt;p&gt;郑嘉诚是大</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java类与对象</title>
+    <link href="http://example.com/2023/01/16/java%E5%85%B3%E4%BA%8E%E7%B1%BB%E7%9A%84%E7%BB%86%E8%8A%82/"/>
+    <id>http://example.com/2023/01/16/java%E5%85%B3%E4%BA%8E%E7%B1%BB%E7%9A%84%E7%BB%86%E8%8A%82/</id>
+    <published>2023-01-16T02:32:15.391Z</published>
+    <updated>2023-01-18T01:49:05.152Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="局部变量和成员变量"><a href="#局部变量和成员变量" class="headerlink" title="局部变量和成员变量"></a>局部变量和成员变量</h3><ul><li>局部变量没有默认值，成员变量有默认值</li><li>局部变量和成员变量同名，成员变量将会被隐藏，要使用成员变量需要用this方法</li></ul><hr><h3 id="引用其他类"><a href="#引用其他类" class="headerlink" title="引用其他类"></a>引用其他类</h3><p>这里设定两个java文件，Point.java和Class.java，它们在同一目录下，Point.java存放的是一个类，Class.java是程序入口</p><p>Point.java</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Point</span>&#123;</span><br><span class="line">Point(<span class="type">int</span> x0,<span class="type">int</span> y0)&#123;</span><br><span class="line">x=x0;</span><br><span class="line">    y=y0;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">Print</span><span class="params">()</span>&#123;</span><br><span class="line">System.out.println(x);</span><br><span class="line">System.out.println(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>Class.java</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Class</span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String argc[])</span>&#123;</span><br><span class="line">Point x=<span class="keyword">new</span> <span class="title class_">Point</span>(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line">x.Print();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在编辑Class.java过程中，java系统会自动编辑Point.java，因为程序需要使用Point.java源文件产生的字节码文件。编辑通过后，目录下会生成Point.class字节码文件。</p><p>注：C++不同的是，java不需要引用其他类的头文件</p><hr><h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>可变参数是指在声明方法是不给出参数列表中从某项开始直至最后一项参数的名字和个数，但是这些参数的类型必须相同。可变参数使用“…”表示若干个参数，这些参数类型必须相同，并且最后一个参数必须是方法的参数列表中的最后一个参数</p><p>例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">func</span><span class="params">(<span class="type">int</span> ... x)</span>;</span><br></pre></td></tr></table></figure><p>可变参数使用下标的方式来使用，即x[0],x[1],x[2]，x.length表示可变参数的长度</p><hr><h3 id="静态变量-类变量"><a href="#静态变量-类变量" class="headerlink" title="静态变量(类变量)"></a>静态变量(类变量)</h3><p>该类所有对象共享的变量</p><p>访问方式</p><p>以对象的数据成员访问</p><p>已类名直接访问</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;局部变量和成员变量&quot;&gt;&lt;a href=&quot;#局部变量和成员变量&quot; class=&quot;headerlink&quot; title=&quot;局部变量和成员变量&quot;&gt;&lt;/a&gt;局部变量和成员变量&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;局部变量没有默认值，成员变量有默认值&lt;/li&gt;
+&lt;li&gt;局部变量和成员变</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>java数组</title>
