@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-20T07:16:23.966Z</updated>
+  <updated>2023-01-20T10:20:14.357Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>接口</title>
+    <link href="http://example.com/2023/01/20/%E6%8E%A5%E5%8F%A3/"/>
+    <id>http://example.com/2023/01/20/%E6%8E%A5%E5%8F%A3/</id>
+    <published>2023-01-20T08:45:15.801Z</published>
+    <updated>2023-01-20T10:20:14.357Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>使用接口关键字interface来定义一个接口。接口的定义和类的定义很相似，分为接口声明和接口体。</p><p>例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Printable</span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> MAX=<span class="number">100</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">float</span> <span class="title function_">sum</span><span class="params">(<span class="type">float</span> x,<span class="type">float</span> y)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><p>接口声明</p><p>定义接口包含接口声明和接口体，和类不同的是，定义接口时使用关键字interface来声明自己是一个接口体，格式如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">interface 接口的名称</span><br></pre></td></tr></table></figure></li><li><p>接口体</p><p>接口体中包含常量的声明（没有变量）和抽象方法。接口体中只有抽象方法，没有普通的方法，而且接口体中所有的常量的访问权限一定是public,而且是static常量（允许省略public、final和static修饰符）</p></li></ul><h2 id="实现接口"><a href="#实现接口" class="headerlink" title="实现接口"></a>实现接口</h2><p>1.类实现接口</p><p>在java语言中，接口由类来实现以便使用接口中的方法。一个类需要在类声明中使用关键字implements声明来实现一个接口或多个接口。</p><p>例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> <span class="keyword">implements</span> <span class="title class_">Printable</span>,Addable</span><br></pre></td></tr></table></figure><p>2.重写接口中的方法</p><p>如果一个非抽象类实现了某个接口，那么这个类必须重写这个接口中的所有方法。需要注意的是，由于接口中的方法一定是public abstract方法，所以在重写接口方法时，不仅要去掉abstract修饰符，给出方法体，而且方法的访问权限一定要用明显的public来修饰。</p><h2 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a>接口回调</h2><p>接口属于引用型变量，接口变量中可以存放实现该接口的类的实例的引用，即对象的引用，比如Com是一个接口，可以用Com来声明一个变量：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Com com;</span><br></pre></td></tr></table></figure><p>此时com是一个空接口，因为com变量中还没有存放该接口的类的实例</p><p>假设A类是实现Com接口的类，用A类创建的实例名字为object,那么object不仅可以调用A类的方法，还可以调用A类实现的接口方法。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A object=<span class="keyword">new</span> <span class="title class_">A</span>();</span><br></pre></td></tr></table></figure><p>接口回调是指：可以把实现某一接口的类创建的对象的引用赋值给该接口声明的接口变量，那么该接口变量就可以调用被该类实现的接口方法。实际上当接口变量调用该类实现的接口方法时，就是通知相应的对象调用这个方法。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com=object;</span><br></pre></td></tr></table></figure><p>注：接口无法调用类中的其他的非接口方法。</p><h2 id="接口和abstract的比较"><a href="#接口和abstract的比较" class="headerlink" title="接口和abstract的比较"></a>接口和abstract的比较</h2><ul><li>abstract类 和接口都可以有abstract方法</li><li>接口中只可以常量，不能有变量，而abstract类中既可以有常量，也可以有变量</li><li>abstract类中业可以有非abstract方法，接口不可以</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;接口&quot;&gt;&lt;a href=&quot;#接口&quot; class=&quot;headerlink&quot; title=&quot;接口&quot;&gt;&lt;/a&gt;接口&lt;/h2&gt;&lt;p&gt;使用接口关键字interface来定义一个接口。接口的定义和类的定义很相似，分为接口声明和接口体。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;figu</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>子类与继承</title>
